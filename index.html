@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeXFight - Consultoría de Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .font-rajdhani {
+            font-family: 'Rajdhani', sans-serif;
+        }
+        .logo-animation {
+            animation: fadeInZoomIn 2s ease-out;
+        }
+        @keyframes fadeInZoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-rajdhani">
+    <div class="flex justify-center items-center h-screen" id="logo-container">
+        <img src="images/logo.jpg" alt="Logo" class="logo-animation h-62">
+    </div>
+
+    <header class="flex items-center h-32 bg-gray-900" id="logo_codexfight" style="display: none;">
+    </header>
+
+    <main class="container mx-auto px-4" id="container_welcome_codexfight" style="display: none;">
+        <section class="flex flex-col items-center justify-center h-screen text-center">
+            <img src="images/logo.jpg" alt="Logo" width="500" height="600">
+
+            <h1 class="text-5xl font-orbitron font-bold mb-4">Bienvenido a CodeXFight</h1>
+            <p class="text-xl mb-8">Innovación y tecnología para el futuro</p>
+            <button class="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition">Contáctanos</button>
+        </section>
+
+        <section class="py-16">
+            <h2 class="text-4xl font-orbitron font-bold mb-8 text-center">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-orbitron font-bold mb-4">Desarrollo de Software</h3>
+                    <p>Soluciones personalizadas para tu negocio.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-orbitron font-bold mb-4">Consultoría TI</h3>
+                    <p>Asesoramiento experto en tecnología.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transform transition duration-500 hover:scale-105">
+                    <h3 class="text-2xl font-orbitron font-bold mb-4">Ciberseguridad</h3>
+                    <p>Protege tus datos y sistemas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16">
+            <h2 class="text-4xl font-orbitron font-bold mb-8 text-center">Portafolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <img src="images/project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-2xl font-orbitron font-bold mb-2">Sistema de Gestión Empresarial</h3>
+                    <p>Un sistema completo para la gestión de recursos empresariales.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <img src="images/project2.jpg" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-2xl font-orbitron font-bold mb-2">Plataforma de E-learning</h3>
+                    <p>Plataforma educativa con cursos interactivos y seguimiento de progreso.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <img src="images/project3.jpg" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="text-2xl font-orbitron font-bold mb-2">Aplicación Móvil de Salud</h3>
+                    <p>Aplicación para el monitoreo de la salud y bienestar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 CodeXFight. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('.transform').hover(
+                function() {
+                    $(this).addClass('scale-105');
+                },
+                function() {
+                    $(this).removeClass('scale-105');
+                }
+            );
+
+            $('button').click(function() {
+                alert('Gracias por contactarnos. Nos pondremos en contacto contigo pronto.');
+            });
+
+            setTimeout(function() {
+                $('#logo-container').fadeOut("slow", function() {
+                    $(this).fadeOut("fast");
+                });
+
+                $('#container_welcome_codexfight').delay(500).fadeIn("slow");
+
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
